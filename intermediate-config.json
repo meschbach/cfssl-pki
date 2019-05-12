@@ -1,0 +1,20 @@
+{
+  "signing": {
+    "default": {
+      "expiry": "43800h"
+    },
+    "profiles": {
+      "intermediate": {
+        "usages": [
+          "signing",
+          "cert sign",
+          "crl sign"
+        ],
+        "ca_constraint": {
+          "is_ca": true
+        },
+        "expiry": "43800h"
+      }
+    }
+  }
+}
