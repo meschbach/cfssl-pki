@@ -1,4 +1,8 @@
 {
   "CN" : "Consul",
-  "hosts" : ["consul.cluster", "consul", "127.0.0.1", "localhost"]
+  "hosts" : ["consul.cluster", "consul", "127.0.0.1", "localhost"],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
 }
