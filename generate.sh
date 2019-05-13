@@ -43,7 +43,7 @@ echo "================================"
 echo "Generating test server certificate"
 echo "================================"
 cfssl gencert -ca=$data/servers/servers.pem -ca-key=$data/servers/servers-key.pem -config $reqs/leafs-config.json -profile server $reqs/server-test.json |cfssljson -bare server-test
-
+cat $data/servers/servers.pem  $data/servers/server-test.pem >$data/servers/server-test-bundle.pem
 )
 
 # Create our server CA
