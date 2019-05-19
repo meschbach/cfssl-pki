@@ -9,7 +9,7 @@ const server = tls.createServer({
 	cert: cert,
 	key: key,
 	enableTrace: true,
-	ciphers: "ECDHE-RSA-RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH",
+	ciphers: "HIGH",
 }, (c) => {
 	console.log("Connected.");
 	c.on("error", (e) => console.error(e) );

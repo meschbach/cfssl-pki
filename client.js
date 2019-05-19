@@ -3,10 +3,10 @@ const fs = require("fs");
 
 const options = {
 	ca: fs.readFileSync("root/ca.pem"),
-	ciphers: "aECDSA:ECDSA",
+	ciphers: "HIGH",
 	honorCipherOrder: true
 }
 
-tls.connect( 9876, options, (f) => {
-	console.log("Connected");
+const socket = tls.connect( 9876, options, () => {
+	console.log("Connected with ciphers: ", socket.getCipher());
 });
