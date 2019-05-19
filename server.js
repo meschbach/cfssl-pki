@@ -11,7 +11,7 @@ const server = tls.createServer({
 	enableTrace: true,
 	ciphers: "HIGH",
 }, (c) => {
-	console.log("Connected.");
+	console.log("Connected with cipher suite: ", c.getCipher());
 	c.on("error", (e) => console.error(e) );
 	setTimeout(() => {
 		c.end("test");
@@ -20,4 +20,3 @@ const server = tls.createServer({
 server.listen(9876, () => {
 	console.log("Listening");
 });
-
