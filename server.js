@@ -8,10 +8,16 @@ const key = fs.readFileSync("servers/server-test-key.pem");
 const server = tls.createServer({
 	cert: cert,
 	key: key,
-	enableTrace: true
+	enableTrace: true,
+	ciphers: "ECDHE-RSA-RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH",
 }, (c) => {
-	c.end();
+	console.log("Connected.");
+	c.on("error", (e) => console.error(e) );
+	setTimeout(() => {
+		c.end("test");
+	}, 1000);
 });
 server.listen(9876, () => {
 	console.log("Listening");
 });
+
